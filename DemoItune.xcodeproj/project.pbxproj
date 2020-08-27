@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		84248EF124F77B38007E6F3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84248EF024F77B38007E6F3E /* AppDelegate.swift */; };
-		84248EF324F77B38007E6F3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84248EF224F77B38007E6F3E /* SceneDelegate.swift */; };
 		84248EF524F77B38007E6F3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84248EF424F77B38007E6F3E /* ViewController.swift */; };
 		84248EF824F77B38007E6F3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84248EF624F77B38007E6F3E /* Main.storyboard */; };
 		84248EFA24F77B3A007E6F3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84248EF924F77B3A007E6F3E /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		84248EED24F77B38007E6F3E /* DemoItune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoItune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84248EF024F77B38007E6F3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84248EF224F77B38007E6F3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84248EF424F77B38007E6F3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84248EF724F77B38007E6F3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84248EF924F77B3A007E6F3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				84248EF024F77B38007E6F3E /* AppDelegate.swift */,
-				84248EF224F77B38007E6F3E /* SceneDelegate.swift */,
 				84248EF424F77B38007E6F3E /* ViewController.swift */,
 				84248EF624F77B38007E6F3E /* Main.storyboard */,
 				84248EF924F77B3A007E6F3E /* Assets.xcassets */,
@@ -140,7 +137,6 @@
 			files = (
 				84248EF524F77B38007E6F3E /* ViewController.swift in Sources */,
 				84248EF124F77B38007E6F3E /* AppDelegate.swift in Sources */,
-				84248EF324F77B38007E6F3E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +283,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6A5Q78PXHC;
 				INFOPLIST_FILE = DemoItune/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +302,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6A5Q78PXHC;
 				INFOPLIST_FILE = DemoItune/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
