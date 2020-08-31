@@ -46,10 +46,9 @@ class ArtistTableViewCell: UITableViewCell {
         artistCellArray = topic.cards
         artistCollectionView.contentOffset = contentOffset
         topicNameLabel.text = topic.title
-    }
-    override func prepareForReuse() {
         artistCollectionView.reloadData()
     }
+
 }
 
 extension ArtistTableViewCell: UICollectionViewDelegate {

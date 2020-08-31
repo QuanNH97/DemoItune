@@ -34,6 +34,7 @@ class AlbumTableViewCell: UITableViewCell {
         topicNameLabel.text = topic.title
         topicNameLabel.textColor = topic.title == "Hots now" ? UIColor(named: "tintColor") : .black
         selectionStyle = .none
+        albumCollectionView.reloadData()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -46,13 +47,12 @@ class AlbumTableViewCell: UITableViewCell {
         albumCollectionView.dataSource = self
         albumCollectionView.delegate = self
     }
+    
     func registerCollectionViewCell() {
         let nibCollectionViewCell = UINib(nibName: "AlbumCollectionViewCell", bundle: nil)
         albumCollectionView.register(nibCollectionViewCell, forCellWithReuseIdentifier: "AlbumCollectionViewCell")
     }
-    override func prepareForReuse() {
-        albumCollectionView.reloadData()
-    }
+
 }
 
 extension AlbumTableViewCell: UICollectionViewDelegate {
