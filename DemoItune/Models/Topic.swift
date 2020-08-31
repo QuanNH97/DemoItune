@@ -12,7 +12,7 @@ struct Topic {
     var id: Int
     var title: String
     var type: TopicType
-    var cards: [Card]
+    var cards: [Any]
 }
 
 enum TopicType {

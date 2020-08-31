@@ -18,7 +18,7 @@ class ArtistTableViewCell: UITableViewCell {
     
     weak var delegate: AlbumTableViewCellDelegate?
     private var indexPath: IndexPath = IndexPath()
-    private var artistCellArray: [Card] = []
+    private var artistCellArray: [Artist] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,10 +43,13 @@ class ArtistTableViewCell: UITableViewCell {
     }
     func configCell(topic: Topic, indexPath: IndexPath, contentOffset: CGPoint) {
         self.indexPath = indexPath
-        artistCellArray = topic.cards
+//        artistCellArray = topic.cards as! [Artist]
+        if let artists = topic.cards as? [Artist] {
+            artistCellArray = artists
+        }
+        artistCollectionView.reloadData()
         artistCollectionView.contentOffset = contentOffset
         topicNameLabel.text = topic.title
-        artistCollectionView.reloadData()
     }
 }
 

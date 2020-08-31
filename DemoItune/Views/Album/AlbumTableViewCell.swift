@@ -18,7 +18,7 @@ class AlbumTableViewCell: UITableViewCell {
     
     weak var delegate: AlbumTableViewCellDelegate?
     private var indexPath: IndexPath = IndexPath()
-    private var albumCellArray: [Card] = []
+    private var albumCellArray: [Album] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,11 +30,13 @@ class AlbumTableViewCell: UITableViewCell {
     
     func configCell(topic: Topic, indexPath: IndexPath, contentOffset: CGPoint) {
         self.indexPath = indexPath
-        albumCellArray = topic.cards
+        if let albums = topic.cards as? [Album] {
+            albumCellArray = albums
+        }
+        albumCollectionView.reloadData()
         albumCollectionView.contentOffset = contentOffset
         topicNameLabel.text = topic.title
         topicNameLabel.textColor = topic.title == "Hots now" ? UIColor(named: "tintColor") : .black
-        albumCollectionView.reloadData()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

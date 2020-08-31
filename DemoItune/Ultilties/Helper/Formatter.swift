@@ -9,6 +9,7 @@
 import Foundation
 
 class Formatter {
+    static let shared = Formatter()
     func formatNumber(number: Int64) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
