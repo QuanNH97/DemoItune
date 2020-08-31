@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, AlbumTableViewCellDelegate {
+class HomeViewController: UIViewController {
     var contentOffsetDictionary: [IndexPath: CGPoint] = [:]
     var data = DataHelper().initData()
     @IBOutlet weak var topicTableView: UITableView!
@@ -32,11 +32,7 @@ class HomeViewController: UIViewController, AlbumTableViewCellDelegate {
     
 }
 
-extension HomeViewController: UITableViewDelegate {
-    func offsetDidChange(indexPath: IndexPath, contentOffset: CGPoint) {
-        contentOffsetDictionary[indexPath] = contentOffset
-    }
-}
+extension HomeViewController: UITableViewDelegate {}
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,17 +41,24 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if data[indexPath.row].type == .album {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumTableViewCell", for: indexPath) as! AlbumTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumTableViewCell", for: indexPath) as? AlbumTableViewCell
+                else { return UITableViewCell() }
             cell.configCell(topic: data[indexPath.row], indexPath: indexPath, contentOffset: contentOffsetDictionary[indexPath] ?? .zero)
             cell.delegate = self
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ArtistTableViewCell", for: indexPath) as! ArtistTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArtistTableViewCell", for: indexPath) as? ArtistTableViewCell
+                else { return UITableViewCell() }
             cell.configCell(topic: data[indexPath.row], indexPath: indexPath, contentOffset: contentOffsetDictionary[indexPath] ?? .zero)
             cell.delegate = self
             return cell
         }
     }
-    
-    
+
+}
+
+extension HomeViewController: AlbumTableViewCellDelegate, ArtistTableViewCellDelegate {
+    func offsetDidChange(indexPath: IndexPath, contentOffset: CGPoint) {
+           contentOffsetDictionary[indexPath] = contentOffset
+       }
 }

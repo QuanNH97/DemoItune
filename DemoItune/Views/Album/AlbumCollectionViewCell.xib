@@ -102,7 +102,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="325" height="305"/>
             <connections>
-                <outlet property="albumImageImage" destination="gd7-2V-GN2" id="W8J-fF-fTv"/>
+                <outlet property="albumImageView" destination="gd7-2V-GN2" id="W8J-fF-fTv"/>
                 <outlet property="albumTitleLabel" destination="T7C-Bq-K2O" id="pwc-03-eJa"/>
                 <outlet property="albumViewCountLabel" destination="DVX-SE-w9K" id="il4-Ph-iPz"/>
             </connections>

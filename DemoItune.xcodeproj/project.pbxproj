@@ -21,7 +21,7 @@
 		843611DD24F8DB9B00193F71 /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843611DB24F8DB9B00193F71 /* ArtistTableViewCell.swift */; };
 		843611DE24F8DB9B00193F71 /* ArtistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843611DC24F8DB9B00193F71 /* ArtistTableViewCell.xib */; };
 		843611E724F8F27700193F71 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843611E624F8F27700193F71 /* Topic.swift */; };
-		843611E924F8F2DE00193F71 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843611E824F8F2DE00193F71 /* Cell.swift */; };
+		843611E924F8F2DE00193F71 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843611E824F8F2DE00193F71 /* Card.swift */; };
 		844BC7A924FB924500BE4586 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BC7A824FB924500BE4586 /* DataHelper.swift */; };
 		844BC7AB24FBC83E00BE4586 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BC7AA24FBC83E00BE4586 /* Formatter.swift */; };
 /* End PBXBuildFile section */
@@ -43,7 +43,7 @@
 		843611DB24F8DB9B00193F71 /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
 		843611DC24F8DB9B00193F71 /* ArtistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistTableViewCell.xib; sourceTree = "<group>"; };
 		843611E624F8F27700193F71 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
-		843611E824F8F2DE00193F71 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		843611E824F8F2DE00193F71 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		844BC7A824FB924500BE4586 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		844BC7AA24FBC83E00BE4586 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				843611E624F8F27700193F71 /* Topic.swift */,
-				843611E824F8F2DE00193F71 /* Cell.swift */,
+				843611E824F8F2DE00193F71 /* Card.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 				843611D124F89F9400193F71 /* AlbumTableViewCell.swift in Sources */,
 				843611D924F8DA4A00193F71 /* ArtistCollectionViewCell.swift in Sources */,
 				843611DD24F8DB9B00193F71 /* ArtistTableViewCell.swift in Sources */,
-				843611E924F8F2DE00193F71 /* Cell.swift in Sources */,
+				843611E924F8F2DE00193F71 /* Card.swift in Sources */,
 				84248EF124F77B38007E6F3E /* AppDelegate.swift in Sources */,
 				843611E724F8F27700193F71 /* Topic.swift in Sources */,
 			);

@@ -10,15 +10,15 @@ import UIKit
 
 class ArtistCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var artistImageImage: UIImageView!
+    @IBOutlet weak var artistImageView: UIImageView!
     @IBOutlet weak var artistNameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    func configCell(cell: Cell) {
+    func configCell(cell: Card) {
         artistNameLabel.text = cell.name
-        artistImageImage.image = UIImage(named: cell.image)
+        artistImageView.image = UIImage(named: cell.image)
     }
 
 }

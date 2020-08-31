@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AlbumTableViewCellDelegate {
+protocol AlbumTableViewCellDelegate: AnyObject {
     func offsetDidChange(indexPath: IndexPath, contentOffset: CGPoint)
 }
 
@@ -16,9 +16,9 @@ class AlbumTableViewCell: UITableViewCell {
     @IBOutlet weak var topicNameLabel: UILabel!
     @IBOutlet weak var albumCollectionView: UICollectionView!
     
-    var delegate: AlbumTableViewCellDelegate?
+    weak var delegate: AlbumTableViewCellDelegate?
     var indexPath: IndexPath = IndexPath()
-    var albumCellArray: [Cell] = []
+    private var albumCellArray: [Card] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,16 +29,16 @@ class AlbumTableViewCell: UITableViewCell {
     
     func configCell(topic: Topic, indexPath: IndexPath, contentOffset: CGPoint) {
         self.indexPath = indexPath
-        albumCellArray = topic.cell
+        albumCellArray = topic.cards
         albumCollectionView.contentOffset = contentOffset
         topicNameLabel.text = topic.title
         topicNameLabel.textColor = topic.title == "Hots now" ? UIColor(named: "tintColor") : .black
         selectionStyle = .none
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -57,8 +57,8 @@ class AlbumTableViewCell: UITableViewCell {
 
 extension AlbumTableViewCell: UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = albumCollectionView.contentOffset
-        delegate?.offsetDidChange(indexPath: indexPath, contentOffset: offset)
+        let contentOffset = albumCollectionView.contentOffset
+        delegate?.offsetDidChange(indexPath: indexPath, contentOffset: contentOffset)
     }
 }
 
@@ -68,7 +68,8 @@ extension AlbumTableViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCollectionViewCell", for: indexPath) as! AlbumCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCollectionViewCell", for: indexPath) as? AlbumCollectionViewCell
+            else { return UICollectionViewCell() }
         cell.configCell(cell: albumCellArray[indexPath.row])
         return cell
     }

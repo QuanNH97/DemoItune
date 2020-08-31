@@ -10,7 +10,7 @@ import UIKit
 
 class AlbumCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var albumImageImage: UIImageView!
+    @IBOutlet weak var albumImageView: UIImageView!
     @IBOutlet weak var albumTitleLabel: UILabel!
     @IBOutlet weak var albumViewCountLabel: UILabel!
     
@@ -20,10 +20,10 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func configCell(cell: Cell) {
-        albumImageImage.image = UIImage(named: cell.image)
+    func configCell(cell: Card) {
+        albumImageView.image = UIImage(named: cell.image)
         albumTitleLabel.text = cell.name
-        albumViewCountLabel.text = formatter.formatNumber(number: cell.viewCount) + " VIEWS"
+        albumViewCountLabel.text = formatter.formatNumber(number: cell.viewCount ?? 0) + " VIEWS"
     }
 
 }

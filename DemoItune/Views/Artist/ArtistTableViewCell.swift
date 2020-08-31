@@ -8,18 +8,17 @@
 
 import UIKit
 
-protocol ArtistTableViewCellDelegate {
+protocol ArtistTableViewCellDelegate: AnyObject {
     func offsetDidChange(indexPath: IndexPath, contentOffset: CGPoint)
 }
 
 class ArtistTableViewCell: UITableViewCell {
-
     @IBOutlet weak var topicNameLabel: UILabel!
     @IBOutlet weak var artistCollectionView: UICollectionView!
     
-    var delegate: AlbumTableViewCellDelegate?
+    weak var delegate: AlbumTableViewCellDelegate?
     var indexPath: IndexPath = IndexPath()
-    var artistCellArray: [Cell] = []
+    private var artistCellArray: [Card] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,7 +43,7 @@ class ArtistTableViewCell: UITableViewCell {
     }
     func configCell(topic: Topic, indexPath: IndexPath, contentOffset: CGPoint) {
         self.indexPath = indexPath
-        artistCellArray = topic.cell
+        artistCellArray = topic.cards
         artistCollectionView.contentOffset = contentOffset
         topicNameLabel.text = topic.title
     }
@@ -66,7 +65,8 @@ extension ArtistTableViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistCollectionViewCell", for: indexPath) as! ArtistCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistCollectionViewCell", for: indexPath) as? ArtistCollectionViewCell
+            else { return UICollectionViewCell() }
         cell.configCell(cell: artistCellArray[indexPath.row])
         return cell
     }

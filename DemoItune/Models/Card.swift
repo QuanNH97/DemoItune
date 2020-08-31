@@ -10,21 +10,9 @@ import Foundation
 
 let viewCountArray: [Int64] = [100000, 123045, 150876, 213532, 345678, 432123, 569690, 780907, 900789, 1130234, 5567405, 9678879]
 
-struct Cell: Hashable {
+struct Card: Hashable {
     var id: Int
     var name: String
     var image: String
-    var viewCount: Int64 = 0
+    var viewCount: Int64? = viewCountArray.randomElement()
 }
-
-extension Cell {
-    init(id: Int, name: String, image: String) {
-        self.id = id
-        self.name = name
-        self.image = image
-        if let viewCount = viewCountArray.randomElement() {
-            self.viewCount = viewCount
-        }
-    }
-}
-
