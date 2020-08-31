@@ -9,9 +9,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    var contentOffsetDictionary: [IndexPath: CGPoint] = [:]
-    var data = DataHelper().initData()
+    private var contentOffsetDictionary: [IndexPath: CGPoint] = [:]
+    private var data = DataHelper().initData()
+    
     @IBOutlet weak var topicTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

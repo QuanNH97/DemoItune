@@ -17,7 +17,7 @@ class AlbumTableViewCell: UITableViewCell {
     @IBOutlet weak var albumCollectionView: UICollectionView!
     
     weak var delegate: AlbumTableViewCellDelegate?
-    var indexPath: IndexPath = IndexPath()
+    private var indexPath: IndexPath = IndexPath()
     private var albumCellArray: [Card] = []
     
     override func awakeFromNib() {
@@ -25,6 +25,7 @@ class AlbumTableViewCell: UITableViewCell {
         // Initialization code
         configCollectionView()
         registerCollectionViewCell()
+        selectionStyle = .none
     }
     
     func configCell(topic: Topic, indexPath: IndexPath, contentOffset: CGPoint) {
@@ -33,7 +34,6 @@ class AlbumTableViewCell: UITableViewCell {
         albumCollectionView.contentOffset = contentOffset
         topicNameLabel.text = topic.title
         topicNameLabel.textColor = topic.title == "Hots now" ? UIColor(named: "tintColor") : .black
-        selectionStyle = .none
         albumCollectionView.reloadData()
     }
     
@@ -52,7 +52,6 @@ class AlbumTableViewCell: UITableViewCell {
         let nibCollectionViewCell = UINib(nibName: "AlbumCollectionViewCell", bundle: nil)
         albumCollectionView.register(nibCollectionViewCell, forCellWithReuseIdentifier: "AlbumCollectionViewCell")
     }
-
 }
 
 extension AlbumTableViewCell: UICollectionViewDelegate {
@@ -73,5 +72,4 @@ extension AlbumTableViewCell: UICollectionViewDataSource {
         cell.configCell(cell: albumCellArray[indexPath.row])
         return cell
     }
-    
 }

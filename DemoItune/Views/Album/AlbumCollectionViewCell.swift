@@ -9,18 +9,17 @@
 import UIKit
 
 class AlbumCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var albumImageView: UIImageView!
     @IBOutlet weak var albumTitleLabel: UILabel!
     @IBOutlet weak var albumViewCountLabel: UILabel!
-    
-    var formatter = Formatter()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
     func configCell(cell: Card) {
+        let formatter = Formatter()
         albumImageView.image = UIImage(named: cell.image)
         albumTitleLabel.text = cell.name
         albumViewCountLabel.text = formatter.formatNumber(number: cell.viewCount ?? 0) + " VIEWS"

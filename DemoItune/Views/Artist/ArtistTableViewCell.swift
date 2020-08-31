@@ -17,7 +17,7 @@ class ArtistTableViewCell: UITableViewCell {
     @IBOutlet weak var artistCollectionView: UICollectionView!
     
     weak var delegate: AlbumTableViewCellDelegate?
-    var indexPath: IndexPath = IndexPath()
+    private var indexPath: IndexPath = IndexPath()
     private var artistCellArray: [Card] = []
     
     override func awakeFromNib() {
@@ -48,7 +48,6 @@ class ArtistTableViewCell: UITableViewCell {
         topicNameLabel.text = topic.title
         artistCollectionView.reloadData()
     }
-
 }
 
 extension ArtistTableViewCell: UICollectionViewDelegate {
@@ -69,5 +68,4 @@ extension ArtistTableViewCell: UICollectionViewDataSource {
         cell.configCell(cell: artistCellArray[indexPath.row])
         return cell
     }
-    
 }
