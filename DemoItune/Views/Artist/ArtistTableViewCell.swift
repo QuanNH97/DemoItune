@@ -68,7 +68,7 @@ extension ArtistTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistCollectionViewCell", for: indexPath) as? ArtistCollectionViewCell
             else { return UICollectionViewCell() }
-        cell.configCell(cell: artistCellArray[indexPath.row])
+        cell.configCell(artist: artistCellArray[indexPath.row])
         return cell
     }
 }

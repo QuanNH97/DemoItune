@@ -18,10 +18,10 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configCell(cell: Album) {
-        albumImageView.image = UIImage(named: cell.image)
-        albumTitleLabel.text = cell.name
-        albumViewCountLabel.text = Formatter.shared.formatNumber(number: cell.viewCount ?? 0) + " VIEWS"
+    func configCell(album: Album) {
+        albumImageView.image = UIImage(named: album.image)
+        albumTitleLabel.text = album.name
+        albumViewCountLabel.text = Formatter.shared.formatNumber(number: album.viewCount ?? 0) + " VIEWS"
     }
 
 }

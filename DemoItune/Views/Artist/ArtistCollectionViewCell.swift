@@ -17,8 +17,8 @@ class ArtistCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configCell(cell: Artist) {
-        artistNameLabel.text = cell.name
-        artistImageView.image = UIImage(named: cell.image)
+    func configCell(artist: Artist) {
+        artistNameLabel.text = artist.name
+        artistImageView.image = UIImage(named: artist.image)
     }
 }

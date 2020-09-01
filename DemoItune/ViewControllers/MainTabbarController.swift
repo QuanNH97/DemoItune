@@ -22,7 +22,7 @@ class MainTabbarController: UITabBarController {
         displayMusicView.translatesAutoresizingMaskIntoConstraints = false
         displayMusicView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         displayMusicView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        displayMusicView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -49).isActive = true
+        displayMusicView.bottomAnchor.constraint(equalTo: tabBar.topAnchor, constant: 0).isActive = true
         displayMusicView.heightAnchor.constraint(equalToConstant: 51).isActive = true
     }
 }

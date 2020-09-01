@@ -71,7 +71,7 @@ extension AlbumTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCollectionViewCell", for: indexPath) as? AlbumCollectionViewCell
             else { return UICollectionViewCell() }
-        cell.configCell(cell: albumCellArray[indexPath.row])
+        cell.configCell(album: albumCellArray[indexPath.row])
         return cell
     }
 }
